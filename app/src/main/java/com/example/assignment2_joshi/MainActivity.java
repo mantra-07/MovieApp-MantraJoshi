@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private SearchViewModel viewModel;
     private MovieAdapter adapter;
-
-    // ✅ Replace with your activated API key
     private final String API_KEY = "fc6b6a0e";
 
     @Override
