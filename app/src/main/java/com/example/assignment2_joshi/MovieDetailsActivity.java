@@ -37,7 +37,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         api = RetrofitClient.getRetrofitInstance();
 
-        // Load movie details from API
         api.getMovieDetails(imdbID, apiKey).enqueue(new Callback<MovieDetails>() {
             @Override
             public void onResponse(Call<MovieDetails> call, Response<MovieDetails> response) {

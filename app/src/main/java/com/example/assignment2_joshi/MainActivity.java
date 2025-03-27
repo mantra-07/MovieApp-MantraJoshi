@@ -22,19 +22,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // ✅ Initialize ViewBinding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // ✅ Initialize ViewModel
         viewModel = new ViewModelProvider(this).get(SearchViewModel.class);
 
-        // ✅ Setup RecyclerView and Adapter
         adapter = new MovieAdapter(this, new ArrayList<>());
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
 
-        // ✅ Handle search button click
         binding.btnSearch.setOnClickListener(v -> {
             String query = binding.etSearch.getText().toString().trim();
             if (!query.isEmpty()) {

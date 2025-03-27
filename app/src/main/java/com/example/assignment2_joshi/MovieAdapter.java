@@ -45,9 +45,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.tvYear.setText(movie.getYear());
         Picasso.get().load(movie.getPoster()).into(holder.imgPoster);
 
-        // ✅ Debug toast to verify binding
-//        Toast.makeText(context, "Binding: " + movie.getTitle(), Toast.LENGTH_SHORT).show();
-
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, MovieDetailsActivity.class);
             intent.putExtra("imdbID", movie.getImdbID());
